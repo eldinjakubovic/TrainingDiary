@@ -16,5 +16,11 @@ namespace TrainingDiary
         {
             InitializeComponent();
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            var form2 = new InsertWorkout();
+            form2.Show();
+        }
     }
 }
