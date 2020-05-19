@@ -31,7 +31,6 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.cmb1 = new System.Windows.Forms.ComboBox();
             this.cmb2 = new System.Windows.Forms.ComboBox();
-            this.cmb3 = new System.Windows.Forms.ComboBox();
             this.lblType = new System.Windows.Forms.Label();
             this.lblNoOfSeries = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -41,6 +40,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
+            this.cmb3 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // dateTimePicker1
@@ -68,11 +68,13 @@
             "Bench press",
             "Deadlift",
             "Biceps curls",
-            "Rope triceps pushdown"});
+            "Rope triceps pushdown",
+            "Running"});
             this.cmb1.Location = new System.Drawing.Point(12, 111);
             this.cmb1.Name = "cmb1";
             this.cmb1.Size = new System.Drawing.Size(200, 24);
             this.cmb1.TabIndex = 1;
+            this.cmb1.SelectedIndexChanged += new System.EventHandler(this.cmb1_SelectedIndexChanged);
             // 
             // cmb2
             // 
@@ -92,40 +94,6 @@
             this.cmb2.Name = "cmb2";
             this.cmb2.Size = new System.Drawing.Size(200, 24);
             this.cmb2.TabIndex = 2;
-            // 
-            // cmb3
-            // 
-            this.cmb3.FormattingEnabled = true;
-            this.cmb3.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19",
-            "20",
-            "21",
-            "22",
-            "23",
-            "24",
-            "25"});
-            this.cmb3.Location = new System.Drawing.Point(12, 231);
-            this.cmb3.Name = "cmb3";
-            this.cmb3.Size = new System.Drawing.Size(200, 24);
-            this.cmb3.TabIndex = 3;
             // 
             // lblType
             // 
@@ -211,11 +179,20 @@
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
             // 
+            // cmb3
+            // 
+            this.cmb3.FormattingEnabled = true;
+            this.cmb3.Location = new System.Drawing.Point(12, 242);
+            this.cmb3.Name = "cmb3";
+            this.cmb3.Size = new System.Drawing.Size(196, 24);
+            this.cmb3.TabIndex = 13;
+            // 
             // InsertWorkout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(363, 450);
+            this.Controls.Add(this.cmb3);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.textBox1);
@@ -225,7 +202,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblNoOfSeries);
             this.Controls.Add(this.lblType);
-            this.Controls.Add(this.cmb3);
             this.Controls.Add(this.cmb2);
             this.Controls.Add(this.cmb1);
             this.Controls.Add(this.dateTimePicker1);
@@ -241,7 +217,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.ComboBox cmb1;
         private System.Windows.Forms.ComboBox cmb2;
-        private System.Windows.Forms.ComboBox cmb3;
         private System.Windows.Forms.Label lblType;
         private System.Windows.Forms.Label lblNoOfSeries;
         private System.Windows.Forms.Label label1;
@@ -251,5 +226,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.ComboBox cmb3;
     }
 }
