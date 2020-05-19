@@ -54,6 +54,7 @@
             // cmb1
             // 
             this.cmb1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmb1.FormattingEnabled = true;
             this.cmb1.Items.AddRange(new object[] {
             "Pushups",
