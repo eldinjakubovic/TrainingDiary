@@ -37,7 +37,7 @@
             this.lblLenght = new System.Windows.Forms.Label();
             this.tbLenght = new System.Windows.Forms.TextBox();
             this.lblDistance = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbDistance = new System.Windows.Forms.TextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.cmb3 = new System.Windows.Forms.ComboBox();
@@ -53,6 +53,7 @@
             // 
             // cmb1
             // 
+            this.cmb1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb1.FormattingEnabled = true;
             this.cmb1.Items.AddRange(new object[] {
             "Pushups",
@@ -78,6 +79,7 @@
             // 
             // cmb2
             // 
+            this.cmb2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb2.FormattingEnabled = true;
             this.cmb2.Items.AddRange(new object[] {
             "1",
@@ -153,12 +155,12 @@
             this.lblDistance.Text = "Distance(meters)";
             this.lblDistance.Click += new System.EventHandler(this.lblDistance_Click);
             // 
-            // textBox1
+            // tbDistance
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 352);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 10;
+            this.tbDistance.Location = new System.Drawing.Point(12, 352);
+            this.tbDistance.Name = "tbDistance";
+            this.tbDistance.Size = new System.Drawing.Size(100, 22);
+            this.tbDistance.TabIndex = 10;
             // 
             // btnSubmit
             // 
@@ -181,6 +183,7 @@
             // 
             // cmb3
             // 
+            this.cmb3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb3.FormattingEnabled = true;
             this.cmb3.Location = new System.Drawing.Point(12, 242);
             this.cmb3.Name = "cmb3";
@@ -195,7 +198,7 @@
             this.Controls.Add(this.cmb3);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnSubmit);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbDistance);
             this.Controls.Add(this.lblDistance);
             this.Controls.Add(this.tbLenght);
             this.Controls.Add(this.lblLenght);
@@ -223,7 +226,7 @@
         private System.Windows.Forms.Label lblLenght;
         private System.Windows.Forms.TextBox tbLenght;
         private System.Windows.Forms.Label lblDistance;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbDistance;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.ComboBox cmb3;

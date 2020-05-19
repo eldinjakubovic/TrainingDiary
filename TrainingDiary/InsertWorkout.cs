@@ -16,7 +16,25 @@ namespace TrainingDiary
         public InsertWorkout()
         {
             InitializeComponent();
+            //Add Array range to 140
+            addIntArrayCmb2(10, this.cmb3);
+            addIntArrayCmb3(140, this.cmb3);
         }
+        //addIntArray call and filling 
+        private void addIntArrayCmb3(int max, ComboBox c)
+        {
+            for (int i = 1; i <= max; i++)
+            {
+                c.Items.Add(i);
+            }
+        }
+            private void addIntArrayCmb2(int max, ComboBox c)
+            {
+                for (int i = 1; i <= max; i++)
+                {
+                    c.Items.Add(i);
+                }
+            }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
@@ -48,6 +66,22 @@ namespace TrainingDiary
                 cmb2.Enabled = true;
                 cmb3.Enabled = true;
             }
+            if (cmb1.SelectedItem.ToString() != "Running")
+            {
+                tbLenght.Enabled = false;
+                tbDistance.Enabled = false;
+            }
+            else
+            {
+                tbLenght.Enabled = true;
+                tbDistance.Enabled = true;
+            }
+        }
+
+        private void cmb3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //this.cmb3.Items.AddRange(Enumerable.Range(1, 100).Select(i => (object)i).ToArray());
+            this.cmb3.Items.Add(Enumerable.Range(1, 100).Select(i => (object)i).ToArray());
         }
     }
 }
