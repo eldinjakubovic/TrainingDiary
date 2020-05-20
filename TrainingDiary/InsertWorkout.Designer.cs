@@ -49,7 +49,6 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
             this.dateTimePicker1.TabIndex = 0;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // cmb1
             // 
@@ -71,7 +70,8 @@
             "Deadlift",
             "Biceps curls",
             "Rope triceps pushdown",
-            "Running"});
+            "Running",
+            " "});
             this.cmb1.Location = new System.Drawing.Point(12, 111);
             this.cmb1.Name = "cmb1";
             this.cmb1.Size = new System.Drawing.Size(200, 24);
@@ -81,6 +81,7 @@
             // cmb2
             // 
             this.cmb2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmb2.FormattingEnabled = true;
             this.cmb2.Items.AddRange(new object[] {
             "1",
@@ -104,9 +105,9 @@
             this.lblType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblType.Location = new System.Drawing.Point(12, 81);
             this.lblType.Name = "lblType";
-            this.lblType.Size = new System.Drawing.Size(143, 20);
+            this.lblType.Size = new System.Drawing.Size(149, 20);
             this.lblType.TabIndex = 4;
-            this.lblType.Text = "Choose workout";
+            this.lblType.Text = "Choose exercise";
             // 
             // lblNoOfSeries
             // 
@@ -154,7 +155,6 @@
             this.lblDistance.Size = new System.Drawing.Size(156, 20);
             this.lblDistance.TabIndex = 9;
             this.lblDistance.Text = "Distance(meters)";
-            this.lblDistance.Click += new System.EventHandler(this.lblDistance_Click);
             // 
             // tbDistance
             // 
@@ -185,6 +185,7 @@
             // cmb3
             // 
             this.cmb3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmb3.FormattingEnabled = true;
             this.cmb3.Location = new System.Drawing.Point(12, 242);
             this.cmb3.Name = "cmb3";

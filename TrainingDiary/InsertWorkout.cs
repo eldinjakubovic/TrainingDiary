@@ -17,7 +17,7 @@ namespace TrainingDiary
         {
             InitializeComponent();
             //Add Array range to 140
-            addIntArrayCmb2(10, this.cmb3);
+            addIntArrayCmb2(10, this.cmb2);
             addIntArrayCmb3(140, this.cmb3);
         }
         //addIntArray call and filling 
@@ -28,34 +28,46 @@ namespace TrainingDiary
                 c.Items.Add(i);
             }
         }
-            private void addIntArrayCmb2(int max, ComboBox c)
+            private void addIntArrayCmb2(int max2, ComboBox c)
             {
-                for (int i = 1; i <= max; i++)
+                for (int i = 1; i <= max2; i++)
                 {
                     c.Items.Add(i);
                 }
             }
 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblDistance_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
             //connection string, otvaranje konekcije, sql query i izvrsavanje querya
-            SqlConnection con = new SqlConnection("Data Source=DESKTOP-NE61V6A;Initial Catalog=stock;Integrated Security=True");
+            SqlConnection con = new SqlConnection("Data Source=DESKTOP-NE61V6A;Initial Catalog=Training;Integrated Security=True");
             con.Open();
-        }
 
+            var sqlQuery = "";
+            sqlQuery = @"INSERT INTO[dbo].[Exercises] ([Date],[ExerciseType],[Series],[Repetitions],[Duration],[Distance])
+             VALUES ('" + dateTimePicker1.Value.Date + "','" + cmb1.SelectedItem + "','" + cmb2.SelectedItem + "','" + cmb3.SelectedItem + "', '" + tbLenght.Text + "','" + tbDistance.Text + "')";
+
+            SqlCommand cmd = new SqlCommand(sqlQuery, con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+
+
+            //Nakon update-a ocisti textboxe
+            Clear();
+        }
+        private void Clear()
+        {
+            //dateTimePicker1.Clear();
+            cmb1.SelectedValue = -1;
+            cmb2.SelectedIndex = -1;
+            cmb3.SelectedIndex = -1;
+            tbLenght.Clear();
+            tbDistance.Clear();
+
+        }
         private void cmb1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //if (Convert.ToString(cmb1.SelectedItem) == "Running") 
+            //If selected item is Running there is no need for series and repetition 
             if (cmb1.SelectedItem.ToString() == "Running")
             {
                 cmb2.Enabled = false;
@@ -66,6 +78,7 @@ namespace TrainingDiary
                 cmb2.Enabled = true;
                 cmb3.Enabled = true;
             }
+            //If selected value is different than running then disable lenght and distance.
             if (cmb1.SelectedItem.ToString() != "Running")
             {
                 tbLenght.Enabled = false;
@@ -78,11 +91,7 @@ namespace TrainingDiary
             }
         }
 
-        private void cmb3_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //this.cmb3.Items.AddRange(Enumerable.Range(1, 100).Select(i => (object)i).ToArray());
-            this.cmb3.Items.Add(Enumerable.Range(1, 100).Select(i => (object)i).ToArray());
-        }
+        
     }
 }
 
