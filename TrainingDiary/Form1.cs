@@ -31,7 +31,8 @@ namespace TrainingDiary
 
         public void searchData()//string valueToSearch
         {
-            string query = @"SELECT * FROM Exercises where [Date] = '" + dateTimePickerSearch.Value.Date + "'";
+            string query = @"SELECT  [ExerciseType],[Series],[Repetitions],[Duration],[Distance],[Date] FROM Exercises 
+                            where [Date] = '" + dateTimePickerSearch.Value.Date + "' order by [ExerciseType] desc";
             //"  [Product] = '" + tbStckProduct.Text + "'";
             comm = new SqlCommand(query, conn);
             sda = new SqlDataAdapter(comm);
