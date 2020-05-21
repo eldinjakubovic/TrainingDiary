@@ -54,6 +54,7 @@ namespace TrainingDiary
 
             //Nakon update-a ocisti textboxe
             Clear();
+            InsertWorkout.ActiveForm.Close();
         }
         private void Clear()
         {
