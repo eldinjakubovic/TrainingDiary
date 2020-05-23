@@ -17,7 +17,6 @@ namespace TrainingDiary
         SqlCommand comm;
         SqlDataAdapter sda;
         DataTable table;
-        private int RowIndex;
 
         public Form1()
         {
@@ -32,7 +31,13 @@ namespace TrainingDiary
 
         public void searchData()//string valueToSearch
         {
-            string query = @"SELECT * FROM Exercises where [Date] = '" + dateTimePickerSearch.Value.Date + "'";
+            string query = @"SELECT 
+                             [ExerciseType]
+                            ,[Series]
+                            ,[Repetitions]
+                            ,[Duration]
+                            ,[Distance]
+                            ,[Date] FROM Exercises where [Date] = '" + dateTimePickerSearch.Value.Date + "'";
             //"  [Product] = '" + tbStckProduct.Text + "'";
             comm = new SqlCommand(query, conn);
             sda = new SqlDataAdapter(comm);

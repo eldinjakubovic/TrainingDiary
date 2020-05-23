@@ -38,7 +38,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(908, 13);
+            this.btnAdd.Location = new System.Drawing.Point(785, 12);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(86, 48);
             this.btnAdd.TabIndex = 0;
@@ -55,7 +55,7 @@
             this.dataGridViewTraining.Name = "dataGridViewTraining";
             this.dataGridViewTraining.ReadOnly = true;
             this.dataGridViewTraining.RowTemplate.Height = 24;
-            this.dataGridViewTraining.Size = new System.Drawing.Size(981, 344);
+            this.dataGridViewTraining.Size = new System.Drawing.Size(858, 344);
             this.dataGridViewTraining.TabIndex = 1;
             // 
             // dateTimePickerSearch
@@ -89,7 +89,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1006, 450);
+            this.ClientSize = new System.Drawing.Size(882, 450);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnTrainingSearch);
             this.Controls.Add(this.dateTimePickerSearch);
