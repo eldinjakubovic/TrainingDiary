@@ -17,6 +17,7 @@ namespace TrainingDiary
         SqlCommand comm;
         SqlDataAdapter sda;
         DataTable table;
+        private int RowIndex;
 
         public Form1()
         {
@@ -48,29 +49,40 @@ namespace TrainingDiary
             searchData();
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        public void DeleteTraining()
         {
-            //SqlConnection con = new SqlConnection("Data Source=DESKTOP-NE61V6A;Initial Catalog=stock;Integrated Security=True");
-            //var sqlQuery = "";
-            //{
-            //    con.Open();
-            //    //   sqlQuery2 = @"INSERT INTO[dbo].[Deleted_items] ([Code],[Product])
-            //    //VALUES ('" + tbCode.Text + "','" + tbProduct.Text + "')";
-            //    sqlQuery = @"DELETE FROM [Products] WHERE [Code] = '" + tbCode.Text + "'";
-            //    //Brisanje iz tabele Products
-            //    SqlCommand cmd = new SqlCommand(sqlQuery, con);
-            //    cmd.ExecuteNonQuery();
-            //    con.Close();
-            foreach (DataGridViewRow item in this.dataGridViewTraining.SelectedRows)
+            SqlConnection con = new SqlConnection("Data Source=DESKTOP-NE61V6A;Initial Catalog=Training;Integrated Security=True");
+            var sqlQuery = "";
             {
-                dataGridViewTraining.Rows.RemoveAt(item.Index);
+                con.Open();
+                foreach (DataGridViewRow item in this.dataGridViewTraining.SelectedRows)
+                {
+                    int id = Convert.ToInt32(dataGridViewTraining.SelectedRows[0].Cells[0].Value);
+                    sqlQuery = "Delete from exercises where id='" + id + "'";
+
+                    dataGridViewTraining.Rows.RemoveAt(this.dataGridViewTraining.SelectedRows[0].Index);
+                    SqlCommand cmd = new SqlCommand(sqlQuery, con);
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+
+                }
 
             }
         }
-    }
-}
-            
 
-            
-    
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            DeleteTraining();
+        }
+    }
+
+
+}
+
+
+
+
+
+
+
 
