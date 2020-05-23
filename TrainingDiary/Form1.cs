@@ -29,6 +29,7 @@ namespace TrainingDiary
             form2.Show();
         }
 
+        //Povlacenje podataka iz tabele Exercises
         public void searchData()//string valueToSearch
         {
             string query = @"SELECT 
@@ -54,6 +55,7 @@ namespace TrainingDiary
             searchData();
         }
 
+        //Brisanje selektovanog reda iz baze
         public void DeleteTraining()
         {
             SqlConnection con = new SqlConnection("Data Source=DESKTOP-NE61V6A;Initial Catalog=Training;Integrated Security=True");

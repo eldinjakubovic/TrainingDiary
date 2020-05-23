@@ -18,7 +18,7 @@ namespace TrainingDiary
             InitializeComponent();
 
             tbPassword.Text = "";
-            // The password character is an asterisk.
+            // The password character 
             tbPassword.PasswordChar = '*';
             // The control will allow no more than 14 characters.
             tbPassword.MaxLength = 14;

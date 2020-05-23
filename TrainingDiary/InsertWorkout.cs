@@ -43,6 +43,7 @@ namespace TrainingDiary
             SqlConnection con = new SqlConnection("Data Source=DESKTOP-NE61V6A;Initial Catalog=Training;Integrated Security=True");
             con.Open();
 
+            //insert into table exercises
             var sqlQuery = "";
             sqlQuery = @"INSERT INTO[dbo].[Exercises] ([Date],[ExerciseType],[Series],[Repetitions],[Duration],[Distance])
              VALUES ('" + dateTimePicker1.Value.Date + "','" + cmb1.SelectedItem + "','" + cmb2.SelectedItem + "','" + cmb3.SelectedItem + "', '" + tbLenght.Text + "','" + tbDistance.Text + "')";
@@ -56,6 +57,7 @@ namespace TrainingDiary
             Clear();
             InsertWorkout.ActiveForm.Close();
         }
+        //Clear fields
         private void Clear()
         {
             //dateTimePicker1.Clear();
